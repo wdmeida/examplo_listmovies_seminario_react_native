@@ -1,4 +1,7 @@
+//Importando React.
 import React, { Component } from 'react';
+
+//Importando os componentes principais da biblioteca.
 import {
   AppRegistry,
   Image,
@@ -10,6 +13,7 @@ import {
 
 var REQUEST_URL = 'http://cinevertentes.herokuapp.com/api/v1/cineplaza/movies';
 
+//Criando o componente principal, container para todo App.
 class AwesomeProject extends Component {
   constructor(props){
     super(props);
@@ -21,6 +25,7 @@ class AwesomeProject extends Component {
     };
   }
 
+  //Função do ReactJS que será executada apenas uma vez, logo após os componentes serem carregados.
   componentDidMount() {
     this.fetchData();
   }
@@ -60,7 +65,8 @@ class AwesomeProject extends Component {
       </View>
     );
   }
-
+  
+  //Renderiza cada elemento, definindo sua posição no container.
   renderMovie(movie) {
     return (
       <View style={styles.container}>
@@ -77,7 +83,7 @@ class AwesomeProject extends Component {
   }
 }
 
-//Define o estilo da app.
+//Criando estilos dos components.
 var styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -107,5 +113,5 @@ var styles = StyleSheet.create({
   },
 });
 
-//Registra a app.
+//Registrando componente principal
 AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
